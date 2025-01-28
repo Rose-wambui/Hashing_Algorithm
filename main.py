@@ -18,17 +18,21 @@ def hashed():
     password = hash_entry.get() 
     md_5 = hashlib.md5()  
     md_5.update(password.encode()) 
-    hashed_md5 = md_5.hexdigest()  
-    entry1.insert(0, hashed_md5)  
+    hashed_md5 = md_5.hexdigest() 
+    entry1.delete(0, tkinter.END) 
+    entry1.insert(0, hashed_md5)
+      
 
     sha_256 = hashlib.sha256()  
     sha_256.update(password.encode()) 
-    hashed_sha256 = sha_256.hexdigest()  
+    hashed_sha256 = sha_256.hexdigest() 
+    entry2.delete(0, tkinter.END) 
     entry2.insert(0, hashed_sha256)
 
     sha_512 = hashlib.sha512()  
     sha_512.update(password.encode()) 
-    hashed_sha512 = sha_512.hexdigest()  
+    hashed_sha512 = sha_512.hexdigest() 
+    entry3.delete(0, tkinter.END) 
     entry3.insert(0, hashed_sha512)
     
     
